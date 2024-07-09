@@ -173,7 +173,7 @@ def avantis_open_trade(wallet_address, private_key, web3, i, margin_open, price,
     gas_limit = web3.eth.estimate_gas({
         'from': wallet_address,
         'to': avantis_contract_address,
-        'value': random.randint(3460000000000, 3490000000000),
+        'value': random.randint(3460000000000, 7490000000000),
         'data': avantis_contract.encodeABI(fn_name='openTrade', args=[open_trade_call, usdc_type, slippageP, executionFee]),
     })
 
@@ -189,7 +189,7 @@ def avantis_open_trade(wallet_address, private_key, web3, i, margin_open, price,
             'gasPrice': gas_price,
             'gas': gas_limit,
             'to': avantis_contract_address,
-            'value': random.randint(3460000000000, 3490000000000),
+            'value': random.randint(3460000000000, 7490000000000),
             'data': avantis_contract.encodeABI(fn_name='openTrade', args=[open_trade_call, usdc_type, slippageP, executionFee]),
             'chainId': 8453,  # ID сети ETH
         }
@@ -241,7 +241,7 @@ def avantis_close_trade(wallet_address, private_key, web3, i, index_avantis, pai
     gas_limit = web3.eth.estimate_gas({
         'from': wallet_address,
         'to': avantis_contract_address,
-        'value': random.randint(3460000000000, 3490000000000),
+        'value': random.randint(3460000000000, 7490000000000),
         'data': avantis_contract.encodeABI(fn_name='closeTradeMarket', args=[pairIndex, index, close_margin, executionFee]),
     })
 
@@ -257,7 +257,7 @@ def avantis_close_trade(wallet_address, private_key, web3, i, index_avantis, pai
             'gasPrice': gas_price,
             'gas': gas_limit,
             'to': avantis_contract_address,
-            'value': random.randint(3460000000000, 3490000000000),
+            'value': random.randint(3460000000000, 7490000000000),
             'data': avantis_contract.encodeABI(fn_name='closeTradeMarket', args=[pairIndex, index, close_margin, executionFee]),
             'chainId': 8453,  # ID сети ETH
         }
